@@ -30,16 +30,16 @@ const Products = ({cat,filters,sort}) => {
     getProducts();
   },[cat]);
 
-  // useEffect(() => {
-  //   console.log(products[0]._id);
-  //   cat && setFilteredProducts( 
-  //     products.filter(item => 
-  //       Object.entries(filters).every(([key,value]) => 
-  //       item[key].includes(value)
-  //       ))
-  //   )
+  useEffect(() => {
+    // console.log(products[0]._id);
+    cat && setFilteredProducts( 
+      products.filter(item => 
+        Object.entries(filters).every(([key,value]) => 
+        item[key].includes(value)
+        ))
+    )
     
-  // },[products,cat,filters])
+  },[products,cat,filters])
 
   return (
     <Container>
